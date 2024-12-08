@@ -9,6 +9,6 @@ namespace CMS.Contract.Interfaces
 {
     public interface ICandidateReadRepository
     {
-        Task<Candidate> GetByEmailSqlAsync(string email, CancellationToken cancellationToken);
+        Task<Candidate> GetByEmailAsync(string email, CancellationToken cancellationToken);
     }
 }
