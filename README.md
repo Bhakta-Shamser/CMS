@@ -43,3 +43,10 @@ The CMS (Candidate Management System) project is a web-based application designe
   
 - **UnitOfWork Pattern**: Consider adopting the UnitOfWork pattern to manage transactions more effectively, ensuring better consistency and easier management of database operations.
 - **Adding Auditing to Domain Entities**: While designing domain entities, we can also create an auditing attribute on the class to track changes such as who created or modified the entity, and when it was created or modified. This can be useful for maintaining historical data, ensuring compliance, and supporting debugging and reporting needs.
+
+## **Development Time Log**
+
+- **1 hour** on _2024-12-07_
+- **5 hours** on _2024-12-08_
+
+_**Total time spent:** 6 hours_
