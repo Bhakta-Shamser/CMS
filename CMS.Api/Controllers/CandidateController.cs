@@ -12,17 +12,19 @@ namespace CMS.Api.Controllers
     {
         private readonly IMediator _mediator;
         private readonly IValidator<AddCandidateCommand> _validator;
-        public CandidatesController(IMediator mediator, IValidator<AddCandidateCommand> validator)
+        private readonly ILogger<CandidatesController> _logger;
+        public CandidatesController(IMediator mediator, IValidator<AddCandidateCommand> validator, ILogger<CandidatesController> logger)
         {
             _mediator = mediator;
             _validator = validator;
+            _logger = logger;
         }
 
         [HttpPost]
         public async Task<IActionResult> AddCandidate([FromBody] AddCandidateCommand command)
         {
             var validationResult = await _validator.ValidateAsync(command);
-
+            _logger.LogInformation("Add Candidate api invoked.");
             if (!validationResult.IsValid)
             {
                 return BadRequest(new { errors = validationResult.Errors.Select(e => e.ErrorMessage) });
@@ -37,7 +39,14 @@ namespace CMS.Api.Controllers
         [HttpGet("{email}")]
         public async Task<IActionResult> GetCandidate(string email)
         {
+            _logger.LogInformation("Get Candidate api invoked.");
             var result = await _mediator.Send(new GetCandidateByEmailQuery(email));
+            if (result == null)
+                return NotFound(new
+                {
+                    Message = $"Candidate with email '{email}' was not found.",
+                    StatusCode = 404
+                });
             return result is null ? NotFound() : Ok(result);
         }
     }
