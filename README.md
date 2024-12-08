@@ -1,7 +1,7 @@
 # CMS Project
 
 ## Overview
-The CMS (Candidate Management System) project is a web-based application designed to manage candidate records efficiently. It supports CRUD operations, robust query handling, and centralized logging. The architecture follows Clean Architecture principles, ensuring separation of concerns and scalability.
+The CMS (Candidate Management System) project is a web-based application designed to manage candidate records efficiently. It supports database operations, robust query handling, and centralized logging. The architecture follows Clean Architecture principles, ensuring separation of concerns and scalability.
 
 ## Features
 - **Domain-Driven Design**: Separation of concerns across layers.
@@ -35,3 +35,9 @@ The CMS (Candidate Management System) project is a web-based application designe
 1. Clone the repository:
    ```bash
    git clone https://github.com/Bhakta-Shamser/CMS.git
+
+## Suggested Improvements
+
+- **Caching with Redis**: If the system experiences performance issues due to increased size and slow retrieval times, implementing caching with Redis can significantly speed up data access.
+  
+- **UnitOfWork Pattern**: Consider adopting the UnitOfWork pattern to manage transactions more effectively, ensuring better consistency and easier management of database operations.
