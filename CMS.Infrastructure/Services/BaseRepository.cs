@@ -1,7 +1,8 @@
 ﻿using System.Data;
+using CMS.Contract.Interfaces;
 using Dapper;
 
-namespace CMS.Contract.Interfaces
+namespace CMS.Infrastructure.Services
 {
     public abstract class BaseRepository
     {
