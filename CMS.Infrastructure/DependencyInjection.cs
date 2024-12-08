@@ -1,4 +1,6 @@
-﻿using CMS.Infrastructure.Persistence;
+﻿using CMS.Contract.Interfaces;
+using CMS.Infrastructure.Persistence;
+using CMS.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,7 +16,10 @@ namespace CMS.Infrastructure
             {
                 options.UseSqlServer(connString);
             });
-           
+
+            services.AddTransient<ICandidateReadRepository, CandidateRepository>();
+            services.AddTransient<ICandidateRepository, CandidateRepository>();
+
             return services;
         }
     }
