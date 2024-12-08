@@ -25,7 +25,7 @@ namespace CMS.Infrastructure.Services
             await _dbContext.Candidates.AddAsync(candidate, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
         }
-        public async Task<Candidate?> GetByEmailSqlAsync(string email, CancellationToken cancellationToken)
+        public async Task<Candidate?> GetByEmailAsync(string email, CancellationToken cancellationToken)
         {
             var query = "SELECT * FROM Candidates WHERE Email = @Email";
             var parameters = new { Email = email };
