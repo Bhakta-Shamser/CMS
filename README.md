@@ -19,10 +19,11 @@ The CMS (Candidate Management System) project is a web-based application designe
 - **FluentAssertions**
 
 ## Layers
-1. **Domain**: Core business logic and entities (e.g., `Candidate`).
-2. **Application**: Business rules and use case implementations.
-3. **Infrastructure**: Data access and integrations with external systems.
-4. **API**: Endpoints for system interaction.
+1. **CMS.Domain**: Core business logic and entities (e.g., `Candidate`).
+2. **CMS.Contract**: Interfaces and DTOs.
+3. **CMS.Application**: Business rules and use case implementations.
+4. **CMS.Infrastructure**: Data access and integrations with external systems.
+5. **CMS.API**: Endpoints for system interaction.
 
 ## Setup and Usage
 
