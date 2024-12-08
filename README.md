@@ -41,3 +41,4 @@ The CMS (Candidate Management System) project is a web-based application designe
 - **Caching with Redis**: If the system experiences performance issues due to increased size and slow retrieval times, implementing caching with Redis can significantly speed up data access.
   
 - **UnitOfWork Pattern**: Consider adopting the UnitOfWork pattern to manage transactions more effectively, ensuring better consistency and easier management of database operations.
+- **Adding Auditing to Domain Entities**: While designing domain entities, we can also create an auditing attribute on the class to track changes such as who created or modified the entity, and when it was created or modified. This can be useful for maintaining historical data, ensuring compliance, and supporting debugging and reporting needs.
