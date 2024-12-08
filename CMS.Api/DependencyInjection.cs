@@ -9,7 +9,7 @@ namespace CMS.Api
         public static IServiceCollection AddApiDI(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddApplication()
-                .AddInfrastructure()
+                .AddInfrastructure(configuration)
                 .AddContract();
             
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
