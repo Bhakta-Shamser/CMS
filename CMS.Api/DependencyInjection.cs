@@ -1,6 +1,8 @@
 ﻿using CMS.Application;
 using CMS.Infrastructure;
 using CMS.Contract;
+using CMS.Contract.Interfaces;
+using CMS.Infrastructure.Services;
 
 namespace CMS.Api
 {
@@ -13,6 +15,8 @@ namespace CMS.Api
                 .AddContract();
             
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AppDomain.CurrentDomain.GetAssemblies()));
+            services.AddSingleton<ISqlConnectionFactory>(provider => new SqlConnectionFactory(configuration.GetConnectionString("defaultConnection")));
+
             return services;
         }
     }
