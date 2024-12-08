@@ -43,7 +43,7 @@ namespace CMS.Domain.Entities
             Email = email;
             FirstName = firstName;
             LastName = lastName;
-            //PhoneNumber = phoneNumber;
+            PhoneNumber = phoneNumber;
             AvailableFrom = availableFrom;
             AvailableTo = availableTo;
             LinkedInProfileUrl = linkedInProfileUrl;
