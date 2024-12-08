@@ -20,7 +20,7 @@ namespace CMS.Application.Candidate.Queries
 
         public async Task<CandidateDto> Handle(GetCandidateByEmailQuery request, CancellationToken cancellationToken)
         {
-            var candidate = await _repository.GetByEmailSqlAsync(request.Email, cancellationToken);
+            var candidate = await _repository.GetByEmailAsync(request.Email, cancellationToken);
             return new CandidateDto(candidate.Email, candidate.FirstName, candidate.LastName);
         }
     }
