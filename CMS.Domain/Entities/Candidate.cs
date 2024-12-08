@@ -52,7 +52,17 @@ namespace CMS.Domain.Entities
             RowId = rowId ?? Guid.NewGuid();
         }
 
-        
+        public void UpdateDetails(string firstName, string lastName, string? phoneNumber, DateTime? availableFrom, DateTime? availableTo, string? linkedInProfileUrl, string? githubProfileUrl, string? comment)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            PhoneNumber = phoneNumber;
+            AvailableFrom = availableFrom;
+            AvailableTo = availableTo;
+            LinkedInProfileUrl = linkedInProfileUrl;
+            GithubProfileUrl = githubProfileUrl;
+            Comment = comment;
+        }
         public void AddComment(string comment)
         {
             Comment = comment;
@@ -71,7 +81,7 @@ namespace CMS.Domain.Entities
 
         public override string ToString()
         {
-            return $"{FirstName} {LastName} ({Email}), RowId: {RowId}";
+            return $"{FirstName} {LastName} ({Email})";
         }
     }
 }
