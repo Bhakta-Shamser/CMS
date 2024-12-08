@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CMS.Application\CMS.Application.csproj" />
     <ProjectReference Include="..\CMS.Contract\CMS.Contract.csproj" />
   </ItemGroup>
 
